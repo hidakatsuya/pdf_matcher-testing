@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'minitest'
-require_relative 'test_adapters/assertion'
+require_relative 'assertion'
 
 module Minitest
   class Test
-    include PdfMatcher::TestAdapters::Assertion
+    include PdfMatcher::Testing::Assertion
   end
 
   module Expectations

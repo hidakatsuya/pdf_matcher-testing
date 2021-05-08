@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
 require 'pdf_matcher'
-require_relative 'test_adapters/falure_message'
+require_relative 'failure_message'
 
 module PdfMatcher
-  module TestAdapters
+  module Testing
     module Matcher
       def match_pdf(expected_pdf, output_diff: nil)
+        MatchPdf.new(expected_pdf, output_diff)
       end
 
       class MatchPdf
+        include ::RSpec::Matchers::Composable
+
         def initialize(expected_pdf, output_diff)
           @expected_pdf = expected_pdf
           @output_diff = output_diff
@@ -21,6 +24,10 @@ module PdfMatcher
 
         def failure_message
           FailureMessage.build(@output_diff)
+        end
+
+        def description
+          'match the expected pdf'
         end
       end
     end
