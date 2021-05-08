@@ -1,5 +1,7 @@
 # PdfMatcher::Testing
 
+[![Test](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml)
+
 This gem provides adapters to adds a matcher to [Test::Unit](https://github.com/test-unit/test-unit), [RSpec](https://github.com/rspec/rspec) and [Minitest](https://github.com/seattlerb/minitest) to test for PDF matches.
 
 ## Prerequisites
