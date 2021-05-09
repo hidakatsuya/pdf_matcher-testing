@@ -75,12 +75,12 @@ assert_match_pdf expected_pdf_data, actual_pdf_data
 
 Expectation:
 ```ruby
-expect(actual_pdf_data).to must_match_pdf(expected_pdf_data)
-expect('/path/to/actual.pdf').to must_match_pdf('/path/to/expected.pdf')
-expect(Pathname('/path/to/actual.pdf')).to must_match_pdf(Pathname('/path/to/expected.pdf'))
+_(actual_pdf_data).must_match_pdf(expected_pdf_data)
+_('/path/to/actual.pdf').must_match_pdf('/path/to/expected.pdf')
+_(Pathname('/path/to/actual.pdf')).must_match_pdf(Pathname('/path/to/expected.pdf'))
 
 # Generating a difference PDF
-expect(actual_pdf_data).to must_match_pdf(expected_pdf_data, output_diff: '/path/to/diff.pdf')
+_(actual_pdf_data).must_match_pdf(expected_pdf_data, output_diff: '/path/to/diff.pdf')
 ```
 
 Or, you can setup the assertion manually as described in Test::Unit.
