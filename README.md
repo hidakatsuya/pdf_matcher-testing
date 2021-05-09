@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml)
 
-This gem provides adapters to adds a matcher to [Test::Unit](https://github.com/test-unit/test-unit), [RSpec](https://github.com/rspec/rspec) and [Minitest](https://github.com/seattlerb/minitest) to test for PDF matches.
+This gem allows testing frameworks such as [Test::Unit](https://github.com/test-unit/test-unit), [RSpec](https://github.com/rspec/rspec) and [Minitest](https://github.com/seattlerb/minitest) to perform PDF matching tests with the [pdf_matcher gem](https://github.com/hidakatsuya/pdf_matcher).
 
 ## Prerequisites
 
@@ -43,17 +43,17 @@ assert_match_pdf Pathname('/path/to/expected.pdf'), Pathname('/path/to/actual.pd
 assert_match_pdf expected_pdf_data, actual_pdf_data, output_diff: '/path/to/diff.pdf'
 ```
 
-Or, you can setup the assertion manually:
+Or, you can enable the assertion manually:
 
 ```ruby
 require 'pdf_matcher/testing/assertion'
 
-# Set globally
+# Enabling globally
 class Test::Unit::TestCase
   include PdfMatcher::Testing::Assertion
 end
 
-# Set for each test class
+# Enabling individually
 class FooTest < Test::Unit::TestCase
   include PdfMatcher::Testing::Assertion
 end
@@ -101,17 +101,17 @@ expect(Pathname('/path/to/actual.pdf')).to match_pdf(Pathname('/path/to/expected
 expect(actual_pdf_data).to match_pdf(expected_pdf_data, output_diff: '/path/to/diff.pdf')
 ```
 
-Or, you can setup the matcher manually:
+Or, you can enable the matcher manually:
 
 ```ruby
 require 'pdf_matcher/testing/matcher'
 
-# Set globally
+# Enabling globally
 RSpec.configure do |config|
   config.include PdfMatcher::Testing::Matcher
 end
 
-# Set individually
+# Enabling individually
 RSpec.describe 'foo' do
   include PdfMatcher::Testing::Matcher
 end
@@ -119,8 +119,11 @@ end
 
 ### Configuring diff-pdf command options
 
-```
-PdfMatcher.config.diff_pdf_opts = %w(--dpi=300 --grayscale)
+```ruby
+PdfMatcher.config.diff_pdf_opts = %w(
+  --mark-differences
+  --channel-tolerance=40
+)
 ```
 
 See `diff-pdf --help` for the available diff-pdf options.
