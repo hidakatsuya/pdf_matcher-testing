@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Katsuya Hidaka']
   spec.email         = ['hidakatsuya@gmail.com']
 
-  spec.description   = 'This gem provides adapters to adds a matcher to Test::Unit, RSpec and Minitest to test for PDF matches.'
+  spec.description   = 'This gem allows testing frameworks such as Test::Unit, RSpec and Minitest to perform PDF matching tests with the pdf_matcher gem.'
   spec.summary       = spec.description
   spec.homepage      = 'https://github.com/hidakatsuya/pdf_matcher-testing'
   spec.license       = 'MIT'
