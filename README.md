@@ -1,5 +1,6 @@
 # PdfMatcher::Testing
 
+[![Gem Version](https://badge.fury.io/rb/pdf_matcher-testing.svg)](https://badge.fury.io/rb/pdf_matcher-testing)
 [![Test](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/hidakatsuya/pdf_matcher-testing/actions/workflows/test.yml)
 
 This gem allows testing frameworks such as [Test::Unit](https://github.com/test-unit/test-unit), [RSpec](https://github.com/rspec/rspec) and [Minitest](https://github.com/seattlerb/minitest) to perform PDF matching tests with the [pdf_matcher gem](https://github.com/hidakatsuya/pdf_matcher).
