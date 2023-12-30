@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'pdf_matcher', '>= 1.0.0'
+  spec.add_dependency 'pdf_matcher', '>= 2.2.0'
 end
